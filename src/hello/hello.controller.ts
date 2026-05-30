@@ -9,5 +9,20 @@ export class HelloController {
       status: 'success',
     };
   }
-}
 
+  @Get('health')
+  getHealth() {
+    return {
+      status: 'UP',
+      timestamp: new Date(),
+    };
+  }
+
+  @Get('version')
+  getVersion() {
+    return {
+      app: 'test_nest_js',
+      version: '1.0.0',
+    };
+  }
+}
