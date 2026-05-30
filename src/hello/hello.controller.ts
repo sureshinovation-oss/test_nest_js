@@ -14,6 +14,7 @@ export class HelloController {
   getHealth() {
     return {
       status: 'UP',
+      service: 'NestJS API',
       timestamp: new Date(),
     };
   }
@@ -21,8 +22,17 @@ export class HelloController {
   @Get('version')
   getVersion() {
     return {
-      app: 'test_nest_js',
       version: '1.0.0',
+      environment: 'production',
+    };
+  }
+
+  @Get('user')
+  getUser() {
+    return {
+      id: 1,
+      name: 'Suresh',
+      role: 'Admin',
     };
   }
 }
