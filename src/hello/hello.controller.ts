@@ -9,5 +9,30 @@ export class HelloController {
       status: 'success',
     };
   }
-}
 
+  @Get('health')
+  getHealth() {
+    return {
+      status: 'UP',
+      service: 'NestJS API',
+      timestamp: new Date(),
+    };
+  }
+
+  @Get('version')
+  getVersion() {
+    return {
+      version: '1.0.0',
+      environment: 'production',
+    };
+  }
+
+  @Get('user')
+  getUser() {
+    return {
+      id: 1,
+      name: 'Suresh',
+      role: 'Admin',
+    };
+  }
+}
